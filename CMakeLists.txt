@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.29)
+cmake_minimum_required(VERSION 3.30)
 
 set(KF_VERSION "6.30.0") # handled by release scripts
 set(KF_DEP_VERSION "6.30.0") # handled by release scripts
@@ -25,6 +25,7 @@ include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 include(CMakePackageConfigHelpers)
 include(ECMDeprecationSettings)
+include(ECMInstalledLibraryCheck)
 include(CMakeDependentOption)
 
 set(ktextwidgets_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/ktextwidgets_version.h")
@@ -35,7 +36,7 @@ ecm_setup_version(PROJECT
                   SOVERSION 6)
 
 # Dependencies
-set(REQUIRED_QT_VERSION 6.9.0)
+set(REQUIRED_QT_VERSION 6.10.0)
 
 option(WITH_TEXT_TO_SPEECH "Build text-to-speech support" ON)
 
